@@ -3,8 +3,10 @@ import { PLAGUE_DATASET } from '../lib/dataset';
 import { computeCadenceStatus } from '../lib/freshness';
 
 describe('Plague Outbreak Dataset Integrity', () => {
-  it('isolates case definitions without conflating confirmed vs quarantined', () => {
+  it('isolates case definitions without conflating confirmed vs quarantined and tracks reported fatalities breakdown', () => {
     expect(PLAGUE_DATASET.metrics.primaryFatalities).toBe(1);
+    expect(PLAGUE_DATASET.metrics.disputedFatalities).toBe(1);
+    expect(PLAGUE_DATASET.metrics.totalFatalitiesReported).toBe(2);
     expect(PLAGUE_DATASET.metrics.contactsUnderQuarantine).toBe(197);
     expect(PLAGUE_DATASET.metrics.confirmedSecondaryCases).toBe(0);
     expect(PLAGUE_DATASET.metrics.confirmedSecondaryCases).not.toBe(PLAGUE_DATASET.metrics.contactsUnderQuarantine);

@@ -17,10 +17,10 @@ export async function POST() {
     cadence,
     connectors: {
       nytimes: nytStatus,
-      dailymail: { status: "ACTIVE", lastChecked: now.toISOString() },
-      dailystar: { status: "ACTIVE", lastChecked: now.toISOString() },
-      indianexpress: { status: "ACTIVE", lastChecked: now.toISOString() },
-      rospotrebnadzor: { status: "ACTIVE", lastChecked: now.toISOString() }
+      dailymail: { status: "ACTIVE", lastChecked: now.toISOString(), breakingReport: "Second fatality at Irkutsk district hospital reported; Kremlin denial tracked" },
+      dailystar: { status: "ACTIVE", lastChecked: now.toISOString(), breakingReport: "Secondary pulmonary fatality claims monitored" },
+      who: { status: "ACTIVE", lastChecked: now.toISOString(), formalInquiry: "IHR Article 9 information request submitted to Russian Federation" },
+      rospotrebnadzor: { status: "ACTIVE", lastChecked: now.toISOString(), classification: "Pneumonia of unknown etiology / second death denied" }
     },
     dataset: PLAGUE_DATASET
   });

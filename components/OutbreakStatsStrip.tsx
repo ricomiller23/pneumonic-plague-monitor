@@ -9,19 +9,27 @@ interface OutbreakStatsStripProps {
 }
 
 export function OutbreakStatsStrip({ metrics }: OutbreakStatsStripProps) {
+  const totalFatalities = metrics.totalFatalitiesReported || (metrics.primaryFatalities + (metrics.disputedFatalities || 0));
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-      {/* Primary Fatalities */}
-      <div className="bg-white p-3.5 rounded-xl border border-red-200/90 shadow-xs">
+      {/* Total Reported Fatalities */}
+      <div className="bg-white p-3.5 rounded-xl border border-red-300 shadow-xs relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1.5 h-full bg-red-600"></div>
         <div className="flex items-center justify-between text-xs font-mono text-red-700">
-          <span>FATALITIES</span>
+          <span>FATALITIES (REPORTED)</span>
           <Skull className="w-4 h-4 text-red-600" />
         </div>
-        <p className="text-2xl font-bold font-mono text-red-600 mt-1">
-          {metrics.primaryFatalities}
-        </p>
-        <span className="text-[11px] text-slate-500 block mt-0.5">
-          Primary Lab Technician (28yo)
+        <div className="flex items-baseline gap-2 mt-1">
+          <p className="text-2xl font-extrabold font-mono text-red-600">
+            {totalFatalities}
+          </p>
+          <span className="text-[10px] font-mono font-semibold px-1.5 py-0.5 rounded bg-red-100 text-red-800 border border-red-200">
+            {metrics.primaryFatalities} Confirmed · {metrics.disputedFatalities} Disputed
+          </span>
+        </div>
+        <span className="text-[11px] text-slate-500 block mt-1 leading-snug">
+          Primary Lab Researcher (28yo) + 2nd District Hospital Case
         </span>
       </div>
 
@@ -49,7 +57,7 @@ export function OutbreakStatsStrip({ metrics }: OutbreakStatsStripProps) {
           {metrics.confirmedSecondaryCases}
         </p>
         <span className="text-[11px] text-slate-500 block mt-0.5">
-          No secondary cases confirmed
+          Zero secondary cases confirmed
         </span>
       </div>
 
@@ -63,7 +71,7 @@ export function OutbreakStatsStrip({ metrics }: OutbreakStatsStripProps) {
           {metrics.quarantinedFacilities}
         </p>
         <span className="text-[11px] text-slate-500 block mt-0.5">
-          Institute Lab & Hospital Ward
+          Institute Lab & Hospital Wards
         </span>
       </div>
 

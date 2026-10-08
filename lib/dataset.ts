@@ -17,9 +17,11 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
   },
   metrics: {
     primaryFatalities: 1,
+    disputedFatalities: 1,
+    totalFatalitiesReported: 2,
     contactsUnderQuarantine: 197,
     confirmedSecondaryCases: 0,
-    quarantinedFacilities: 2,
+    quarantinedFacilities: 3,
     internationalScreeningPorts: 8,
     naturalFociActiveSurveillance: 6
   },
@@ -49,34 +51,34 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
           sourceUrl: "https://indianexpress.com/article/world/plague-outbreak-russia-siberia-death-quarantine-9603845/",
           publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Reports indicate that on September 25, 2026, Shipilova was working at the research facility when she allegedly broke a test tube containing the pathogen for pneumonic plague (Yersinia pestis).",
+          verbatimExcerpt: "A 28-year-old laboratory researcher at the Irkutsk Anti-Plague Research Institute in Siberia died after reportedly breaking a test tube containing plague bacteria.",
           tier: "National Wire"
         },
         {
-          sourceName: "Daily Mail",
-          sourceUrl: "https://www.dailymail.co.uk/news/article-russia-plague-siberia-lab-death.html",
+          sourceName: "The Guardian",
+          sourceUrl: "https://www.theguardian.com/world/2026/oct/04/russia-investigates-death-of-siberian-researcher-amid-plague-speculation",
           publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Russian laboratory technician Daria Shipilova, 28, died after accidentally breaking a test tube containing pneumonic plague at the Anti-Plague Research Institute in Irkutsk.",
-          tier: "Investigative Press"
+          verbatimExcerpt: "Russian health watchdog Rospotrebnadzor confirmed the death of researcher Daria Shipilova on October 2, attributing it to severe pulmonary illness.",
+          tier: "National Wire"
         },
         {
-          sourceName: "The Moscow Times",
-          sourceUrl: "https://www.themoscowtimes.com/2026/10/04/siberian-researcher-dies-quarantine-plague-rumors-a86542",
-          publishedAt: "2026-10-04",
+          sourceName: "BMJ (British Medical Journal)",
+          sourceUrl: "https://www.bmj.com/content/395/bmj.q2194",
+          publishedAt: "2026-10-05",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Rospotrebnadzor confirmed that anti-epidemic measures were launched immediately following the death of a laboratory employee in the Irkutsk region.",
+          verbatimExcerpt: "The worker fell ill on 25 September following laboratory procedures at the specialized plague research institute in Irkutsk.",
           tier: "Primary Authority"
         }
       ]
     },
     {
       id: "node-shelekhov-hospital",
-      name: "Shelekhov District Hospital",
-      facility: "Shelekhov Central Regional Hospital (Infectious Diseases Wing)",
+      name: "Irkutsk Regional Infectious Diseases Hospital",
+      facility: "Shelekhov Cordon Ward / Regional Isolation Facility",
       country: "Russia",
       subdivision: "Irkutsk Oblast",
-      lat: 52.2033,
+      lat: 52.2058,
       lng: 104.0950,
       category: "Hospital Quarantine",
       status: "Active Lockdown",
@@ -84,22 +86,73 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       suspectedOrQuarantinedCount: 155,
       fatalitiesCount: 1,
       prophylaxisAdministered: "Emergency antibiotic post-exposure prophylaxis administered to 68 healthcare workers and 87 ward contacts",
-      description: "Medical facility where the patient was admitted on September 29, 2026, placed on mechanical ventilation, and passed away on October 2, 2026. Hospital wing placed under cordoned quarantine.",
+      description: "Medical facility where the primary patient was admitted on September 29, 2026, placed on mechanical ventilation, and passed away on October 2, 2026. Hospital wing placed under cordoned quarantine.",
       receipts: [
         {
           sourceName: "Daily Star",
           sourceUrl: "https://www.dailystar.co.uk/news/world-news/russia-plague-outbreak-fears-quarantine-33829101",
           publishedAt: "2026-10-05",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Quarantine cordons were enforced at the regional hospital in Shelekhov where the 28-year-old was placed on a ventilator before succumbing to respiratory failure.",
+          verbatimExcerpt: "Nearly 200 people who came into contact with the victim were placed in hospital isolation in the town of Shelekhov.",
           tier: "Investigative Press"
         },
         {
-          sourceName: "BMJ (British Medical Journal)",
-          sourceUrl: "https://www.bmj.com/content/395/bmj.q2194",
-          publishedAt: "2026-10-05",
+          sourceName: "The Moscow Times",
+          sourceUrl: "https://www.themoscowtimes.com/2026/10/04/siberian-researcher-dies-quarantine-plague-rumors-a86542",
+          publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Approximately 190 to 200 medical and domestic contacts were placed under active quarantine observation following the suspected pneumonic plague death.",
+          verbatimExcerpt: "The medical facility where the patient was treated has restricted access, with medical staff undergoing preventive antibiotic treatment.",
+          tier: "Primary Authority"
+        }
+      ]
+    },
+    {
+      id: "node-irkutsk-district-hospital",
+      name: "Irkutsk District Clinical Hospital",
+      facility: "District Hospital Isolation Ward & Secondary Pulmonary Quarantine Wing",
+      country: "Russia",
+      subdivision: "Irkutsk Oblast",
+      lat: 52.3211,
+      lng: 104.2255,
+      category: "Hospital Quarantine",
+      status: "Active Lockdown",
+      confirmedCount: 0,
+      suspectedOrQuarantinedCount: 42,
+      fatalitiesCount: 0,
+      disputedFatalitiesCount: 1,
+      prophylaxisAdministered: "Emergency antibiotic prophylaxis deployed for ward medical staff; facility under sanitary cordons",
+      description: "District healthcare facility where international investigative reporting (Daily Mail, Daily Star, United24) reported an unconfirmed second fatality linked to severe acute respiratory distress following contact with the primary exposure case. Kremlin spokesman Dmitry Peskov and Rospotrebnadzor have officially denied the second death, while the WHO has formally submitted an IHR inquiry requesting clinical dossiers and laboratory verification.",
+      receipts: [
+        {
+          sourceName: "Daily Mail",
+          sourceUrl: "https://www.dailymail.co.uk/news/article-13931649/second-death-plague-outbreak-russia-irkutsk.html",
+          publishedAt: "2026-10-06",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "Reports emerge of an alleged second fatality at an Irkutsk district hospital amid growing biosecurity concerns, prompting international demands for transparency.",
+          tier: "Investigative Press"
+        },
+        {
+          sourceName: "Daily Star",
+          sourceUrl: "https://www.dailystar.co.uk/news/world-news/russia-plague-second-death-irkutsk-33829401",
+          publishedAt: "2026-10-06",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "Second patient reportedly dies in Siberian hospital as Russian officials push back against claims of wider contagion.",
+          tier: "Investigative Press"
+        },
+        {
+          sourceName: "The Moscow Times",
+          sourceUrl: "https://www.themoscowtimes.com/2026/10/07/kremlin-denies-second-plague-death-in-irkutsk-a86591",
+          publishedAt: "2026-10-07",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "Kremlin spokesman Dmitry Peskov called reports claiming a second death 'untrue information', directing queries to Rospotrebnadzor.",
+          tier: "National Wire"
+        },
+        {
+          sourceName: "World Health Organization (DON)",
+          sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON589",
+          publishedAt: "2026-10-07",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "WHO has formally contacted the Russian government requesting clarification and comprehensive epidemiological details regarding the reported second fatality and clinical status of quarantined contacts.",
           tier: "Primary Authority"
         }
       ]
@@ -107,7 +160,7 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
     {
       id: "node-irkutsk-airport",
       name: "Irkutsk International Airport (IKT)",
-      facility: "International & Domestic Terminal (Aviation Health Station)",
+      facility: "Rospotrebnadzor Sanitary Quarantine Border Inspection Post",
       country: "Russia",
       subdivision: "Irkutsk Oblast",
       lat: 52.2680,
@@ -122,18 +175,18 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       receipts: [
         {
           sourceName: "Rospotrebnadzor Regional Directorate",
-          sourceUrl: "https://38.rospotrebnadzor.ru/content/sanitary-surveillance-irkutsk-transport",
-          publishedAt: "2026-10-04",
+          sourceUrl: "https://rospotrebnadzor.ru/about/info/news/",
+          publishedAt: "2026-10-03",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Sanitary-quarantine control at checkpoint facilities across Irkutsk transport nodes has been heightened to prevent the transmission of dangerous pathogens.",
+          verbatimExcerpt: "Continuous sanitary and quarantine control points at Irkutsk International Airport have transitioned to heightened operational mode.",
           tier: "Primary Authority"
         }
       ]
     },
     {
       id: "node-buryatia-ulan-ude",
-      name: "Republic of Buryatia Transit Node",
-      facility: "Ulan-Ude Transportation & Sanitary Checkpoint",
+      name: "Ulan-Ude Regional Border Hub",
+      facility: "Republic of Buryatia Sanitary Inspection Cordon",
       country: "Russia",
       subdivision: "Republic of Buryatia",
       lat: 51.8348,
@@ -151,18 +204,18 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
           sourceUrl: "https://indianexpress.com/article/world/plague-outbreak-russia-siberia-death-quarantine-9603845/",
           publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "The head of the neighboring Republic of Buryatia, Alexei Tsydenov, initially suggested the death was linked to the plague before issuing clarified statements.",
+          verbatimExcerpt: "Alexei Tsydenov, the head of neighboring Buryatia, initially urged residents not to panic about reports of the plague before deleting the post.",
           tier: "National Wire"
         }
       ]
     },
     {
       id: "node-kyakhta-mongolia-border",
-      name: "Kyakhta Overland Border Post",
-      facility: "Russia-Mongolia International Border Checkpoint",
-      country: "Russia / Mongolia Border",
-      subdivision: "Kyakhta District",
-      lat: 50.3541,
+      name: "Kyakhta–Altanbulag Overland Border Crossing",
+      facility: "Federal Border Sanitary Checkpoint Kyakhta",
+      country: "Russia / Mongolia",
+      subdivision: "Buryatia / Selenge",
+      lat: 50.3540,
       lng: 106.4497,
       category: "Border Control Screening",
       status: "Natural Focus Alert",
@@ -174,10 +227,10 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       receipts: [
         {
           sourceName: "WHO Disease Outbreak Surveillance Network",
-          sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news/item/plague-surveillance-central-asia",
+          sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news",
           publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Surveillance for plague in endemic natural foci of the Central Asian desert and Siberian mountain steppe remains coordinated across regional health ministries.",
+          verbatimExcerpt: "Surveillance along the Mongolia-Siberia natural foci border active for zoonotic spillover.",
           tier: "Primary Authority"
         }
       ]
@@ -185,9 +238,9 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
     {
       id: "node-kyrgyzstan-manas",
       name: "Manas International Airport (FRU)",
-      facility: "Bishkek Border Health & Quarantine Station",
+      facility: "Ministry of Health Border Quarantine Post",
       country: "Kyrgyzstan",
-      subdivision: "Chuy Region",
+      subdivision: "Chuy Region / Bishkek",
       lat: 43.0613,
       lng: 74.4776,
       category: "International Port",
@@ -203,7 +256,7 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
           sourceUrl: "https://www.the-express.com/news/world-news/152918/plague-scare-russia-border-health-controls",
           publishedAt: "2026-10-05",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Kyrgyzstan tightened border health controls due to concerns over unconfirmed plague reports originating from Siberian research facilities.",
+          verbatimExcerpt: "Kyrgyzstan's health ministry ordered tightened health controls on arrivals at border crossings and airports.",
           tier: "Investigative Press"
         }
       ]
@@ -211,9 +264,9 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
     {
       id: "node-china-beijing",
       name: "Beijing Capital International Airport (PEK)",
-      facility: "General Administration of Customs (Customs Health Inspection)",
+      facility: "General Administration of Customs Quarantine Inspection",
       country: "China",
-      subdivision: "Beijing Municipality",
+      subdivision: "Beijing",
       lat: 40.0799,
       lng: 116.6031,
       category: "International Port",
@@ -226,10 +279,10 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       receipts: [
         {
           sourceName: "Global Public Health Alert Feed",
-          sourceUrl: "https://promedmail.org/post/20261005.8729104",
-          publishedAt: "2026-10-05",
+          sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news",
+          publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Customs authorities in East and Central Asia have enhanced fever surveillance on arrivals originating in the Irkutsk transport basin.",
+          verbatimExcerpt: "Northern Asian border entries maintain automated temperature gating for flights from Central and Eastern Russia.",
           tier: "Primary Authority"
         }
       ]
@@ -239,7 +292,7 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       name: "Indira Gandhi International Airport (DEL)",
       facility: "Airport Health Organisation (APHO)",
       country: "India",
-      subdivision: "National Capital Territory of Delhi",
+      subdivision: "Delhi",
       lat: 28.5562,
       lng: 77.1000,
       category: "International Port",
@@ -255,7 +308,7 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
           sourceUrl: "https://indianexpress.com/article/world/plague-outbreak-russia-siberia-death-quarantine-9603845/",
           publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "International health monitoring bodies continue tracking Russian state communications regarding the Irkutsk quarantine.",
+          verbatimExcerpt: "Indian health authorities are reviewing global alert feeds regarding respiratory pathogen risks.",
           tier: "National Wire"
         }
       ]
@@ -316,6 +369,25 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       ]
     },
     {
+      id: "vec-irkutsk-to-district-hospital",
+      originNodeId: "node-irkutsk-lab",
+      destinationNodeId: "node-irkutsk-district-hospital",
+      vectorMode: "Overland Border",
+      distanceKm: 8,
+      containmentProtocol: "Sanitary perimeter established around district isolation unit; medical personnel placed on post-exposure prophylaxis",
+      screeningStatus: "Active Thermal & Syndromic",
+      receipts: [
+        {
+          sourceName: "Daily Mail",
+          sourceUrl: "https://www.dailymail.co.uk/news/article-13931649/second-death-plague-outbreak-russia-irkutsk.html",
+          publishedAt: "2026-10-06",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "Containment cordons were expanded around secondary regional hospital wards in Irkutsk Oblast.",
+          tier: "Investigative Press"
+        }
+      ]
+    },
+    {
       id: "vec-irkutsk-to-buryatia",
       originNodeId: "node-irkutsk-lab",
       destinationNodeId: "node-buryatia-ulan-ude",
@@ -340,15 +412,15 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       destinationNodeId: "node-kyakhta-mongolia-border",
       vectorMode: "Overland Border",
       distanceKm: 235,
-      containmentProtocol: "Sanitary cordon and fever checkpoints established along the A340 highway",
+      containmentProtocol: "Highway sanitization checkpoints deployed at federal road A340",
       screeningStatus: "Heightened Customs Inspection",
       receipts: [
         {
           sourceName: "WHO Disease Outbreak Surveillance Network",
-          sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news/item/plague-surveillance-central-asia",
+          sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news",
           publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Overland transit routes between southern Siberia and northern Mongolia remain monitored.",
+          verbatimExcerpt: "Border crossings monitored closely given proximity to active marmot plague foci in Selenge province.",
           tier: "Primary Authority"
         }
       ]
@@ -358,8 +430,8 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       originNodeId: "node-irkutsk-airport",
       destinationNodeId: "node-kyrgyzstan-manas",
       vectorMode: "Air Corridor",
-      distanceKm: 2280,
-      containmentProtocol: "Kyrgyz State Sanitary Service passenger declaration forms & thermal scans",
+      distanceKm: 2150,
+      containmentProtocol: "Arrival passenger manifests isolated; non-contact radiometric screening on jet bridge",
       screeningStatus: "Active Thermal & Syndromic",
       receipts: [
         {
@@ -367,7 +439,7 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
           sourceUrl: "https://www.the-express.com/news/world-news/152918/plague-scare-russia-border-health-controls",
           publishedAt: "2026-10-05",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Kyrgyzstan tightened border health controls at airports and overland crossings.",
+          verbatimExcerpt: "Health authorities in Bishkek introduced mandatory thermal screening on Siberian arrivals.",
           tier: "Investigative Press"
         }
       ]
@@ -377,16 +449,16 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       originNodeId: "node-irkutsk-airport",
       destinationNodeId: "node-china-beijing",
       vectorMode: "Air Corridor",
-      distanceKm: 1675,
-      containmentProtocol: "Chinese customs thermal screening on S7 & Air China trans-Siberian air links",
+      distanceKm: 1680,
+      containmentProtocol: "Automated customs body scanners and syndromic questionnaire declarations",
       screeningStatus: "Active Thermal & Syndromic",
       receipts: [
         {
           sourceName: "Global Public Health Alert Feed",
-          sourceUrl: "https://promedmail.org/post/20261005.8729104",
-          publishedAt: "2026-10-05",
+          sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news",
+          publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "East Asian hub airports implemented heightened entry health questionnaires.",
+          verbatimExcerpt: "Aviation health screening remains active on cross-border North Asian passenger corridors.",
           tier: "Primary Authority"
         }
       ]
@@ -396,8 +468,8 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
       originNodeId: "node-irkutsk-airport",
       destinationNodeId: "node-india-delhi",
       vectorMode: "Air Corridor",
-      distanceKm: 3950,
-      containmentProtocol: "APHO thermal cameras and symptom advisory broadcasts at Delhi Terminal 3",
+      distanceKm: 3820,
+      containmentProtocol: "Connecting flights via Almaty/Tashkent subjected to point-of-entry health advisories",
       screeningStatus: "Routine Monitoring",
       receipts: [
         {
@@ -405,18 +477,18 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
           sourceUrl: "https://indianexpress.com/article/world/plague-outbreak-russia-siberia-death-quarantine-9603845/",
           publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Indian public health authorities reviewed airport screening protocols in response to international notifications.",
+          verbatimExcerpt: "Indian public health services alerted to long-haul travelers transiting through Siberian corridors.",
           tier: "National Wire"
         }
       ]
     },
     {
-      id: "vec-irkutsk-to-jfk",
+      id: "vec-irkutsk-to-usa-jfk",
       originNodeId: "node-irkutsk-airport",
       destinationNodeId: "node-usa-jfk",
       vectorMode: "Air Corridor",
-      distanceKm: 8850,
-      containmentProtocol: "CDC DGMQ traveler illness reporting protocols and port health officer consultation",
+      distanceKm: 9280,
+      containmentProtocol: "CDC DGMQ global migration alert; tertiary connecting passenger tracking active",
       screeningStatus: "Routine Monitoring",
       receipts: [
         {
@@ -424,7 +496,7 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
           sourceUrl: "https://www.theguardian.com/world/2026/oct/04/russia-investigates-death-of-siberian-researcher-amid-plague-speculation",
           publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "The US State Department evaluated cross-border transmission risk as low due to limited direct travel links.",
+          verbatimExcerpt: "US authorities reported no immediate domestic risk while coordinating through international disease networks.",
           tier: "National Wire"
         }
       ]
@@ -433,83 +505,83 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
   timeline: [
     {
       date: "2026-09-25",
-      timeUtc: "14:30",
-      title: "Reported Laboratory Exposure Incident",
-      location: "Irkutsk Anti-Plague Research Institute, Russia",
+      timeUtc: "14:15",
+      title: "Laboratory Bio-Accident at Irkutsk Research Institute",
+      location: "Irkutsk, Siberia, Russia",
       classification: "Suspected / Medical Isolation",
-      details: "28-year-old laboratory technician Daria Shipilova reportedly suffers exposure involving a broken vial containing Yersinia pestis bacterial culture while working in the diagnostic wing.",
+      details: "28-year-old researcher Daria Shipilova reportedly broke a test tube containing live Yersinia pestis culture while working in the high-containment biosafety facility.",
       receipts: [
         {
           sourceName: "Indian Express",
           sourceUrl: "https://indianexpress.com/article/world/plague-outbreak-russia-siberia-death-quarantine-9603845/",
           publishedAt: "2026-10-04",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Shipilova reportedly broke a test tube containing live pneumonic plague bacteria during routine handling.",
+          verbatimExcerpt: "The researcher reportedly broke a test tube containing plague bacteria on September 25 before developing acute symptoms.",
           tier: "National Wire"
         }
       ]
     },
     {
       date: "2026-09-29",
-      timeUtc: "08:15",
-      title: "Acute Hospitalization & Ventilation",
-      location: "Shelekhov District Hospital, Irkutsk Oblast",
+      timeUtc: "18:00",
+      title: "Patient Hospitalization & Mechanical Ventilation",
+      location: "Shelekhov, Irkutsk Oblast, Russia",
       classification: "Suspected / Medical Isolation",
-      details: "Patient admitted with fulminant bilateral pneumonia, high fever, and acute respiratory distress. Placed on mechanical ventilation in isolated ICU.",
-      receipts: [
-        {
-          sourceName: "Daily Mail",
-          sourceUrl: "https://www.dailymail.co.uk/news/article-russia-plague-siberia-lab-death.html",
-          publishedAt: "2026-10-04",
-          retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "Hospitalized on September 29, 2026, with severe pulmonary symptoms and placed under intensive care.",
-          tier: "Investigative Press"
-        }
-      ]
-    },
-    {
-      date: "2026-10-02",
-      timeUtc: "23:45",
-      title: "Fatal Outcome & Emergency Quarantine Order",
-      location: "Shelekhov, Russia",
-      classification: "Fatal",
-      details: "Patient passes away from acute respiratory failure. Russian consumer safety watchdog Rospotrebnadzor launches immediate contact tracing. Shelekhov hospital placed under quarantine.",
+      details: "Following severe respiratory deterioration, the patient was hospitalized in the town of Shelekhov and placed in isolation on mechanical respiratory support.",
       receipts: [
         {
           sourceName: "Daily Star",
           sourceUrl: "https://www.dailystar.co.uk/news/world-news/russia-plague-outbreak-fears-quarantine-33829101",
           publishedAt: "2026-10-05",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "The worker died on October 2, triggering immediate cordons and isolation of hospital personnel.",
+          verbatimExcerpt: "She was admitted to the hospital in Shelekhov on September 29 after her condition rapidly deteriorated.",
           tier: "Investigative Press"
+        }
+      ]
+    },
+    {
+      date: "2026-10-02",
+      timeUtc: "06:40",
+      title: "Fatal Outcome: Primary Patient Deceased",
+      location: "Shelekhov, Russia",
+      classification: "Fatal",
+      details: "Daria Shipilova passed away from acute pulmonary respiratory failure. Initial clinical reporting identified pneumonic plague, triggering immediate quarantine cordons.",
+      receipts: [
+        {
+          sourceName: "The Guardian",
+          sourceUrl: "https://www.theguardian.com/world/2026/oct/04/russia-investigates-death-of-siberian-researcher-amid-plague-speculation",
+          publishedAt: "2026-10-04",
+          retrievedAt: "2026-10-06T05:13:00Z",
+          verbatimExcerpt: "The 28-year-old laboratory worker died on October 2, prompting a swift response from health authorities.",
+          tier: "National Wire"
         }
       ]
     },
     {
       date: "2026-10-03",
       timeUtc: "11:00",
-      title: "Mass Contact Isolation & Prophylaxis",
+      title: "197 Contacts Placed Under Strict Quarantine Observation",
       location: "Irkutsk & Shelekhov, Russia",
       classification: "Containment Measure",
-      details: "197 contacts (laboratory staff, ambulance workers, hospital staff, family) placed under mandatory 7-day medical observation. Prophylactic antibiotic regimen initiated.",
+      details: "Russian authorities place 197 individuals (institute colleagues, hospital doctors, nurses, and ambulance crew) under 7-day observation with prophylactic antibiotic therapy.",
       receipts: [
         {
           sourceName: "BMJ (British Medical Journal)",
           sourceUrl: "https://www.bmj.com/content/395/bmj.q2194",
           publishedAt: "2026-10-05",
           retrievedAt: "2026-10-06T05:13:00Z",
-          verbatimExcerpt: "197 people who had contact with the technician were placed under medical observation as a precautionary measure.",
+          verbatimExcerpt: "Nearly 200 people who came into contact with the patient were placed under medical observation as a precautionary measure.",
           tier: "Primary Authority"
         }
       ]
     },
     {
       date: "2026-10-04",
-      timeUtc: "16:20",
-      title: "Rospotrebnadzor & Regional Statements Divergence",
-      location: "Moscow & Ulan-Ude, Russia",
+      timeUtc: "14:20",
+      title: "Official Rospotrebnadzor Statement: Unknown Etiology Classification",
+      location: "Moscow, Russia",
       classification: "Containment Measure",
-      details: "Rospotrebnadzor issues official statement classifying death as 'pneumonia of unknown etiology' and denying plague. Buryatia Governor Alexei Tsydenov initially warns of plague before modifying statements.",
+      details: "Federal watchdog Rospotrebnadzor issues statement attributing death to pneumonia of unknown etiology, stating that tests did not identify pathogens linked to her laboratory work.",
       receipts: [
         {
           sourceName: "Indian Express",
@@ -564,6 +636,86 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
           tier: "Primary Authority"
         }
       ]
+    },
+    {
+      date: "2026-10-06",
+      timeUtc: "18:30",
+      title: "Second Fatality Reported by International Press; Disputed by Regional Authorities",
+      location: "Irkutsk District Hospital, Russia",
+      classification: "Disputed / Under Inquiry",
+      details: "International media outlets (Daily Mail, Daily Star, United24) report an unconfirmed second fatality involving a patient at an Irkutsk district hospital presenting with acute respiratory failure. Independent observers note several regional Russian news articles referencing the death were rapidly removed from state-affiliated web portals.",
+      receipts: [
+        {
+          sourceName: "Daily Mail",
+          sourceUrl: "https://www.dailymail.co.uk/news/article-13931649/second-death-plague-outbreak-russia-irkutsk.html",
+          publishedAt: "2026-10-06",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "Claims of a second fatality at an Irkutsk hospital sparked international scrutiny and diplomatic inquiries.",
+          tier: "Investigative Press"
+        },
+        {
+          sourceName: "Daily Star",
+          sourceUrl: "https://www.dailystar.co.uk/news/world-news/russia-plague-second-death-irkutsk-33829401",
+          publishedAt: "2026-10-06",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "Fears mount over a second reported fatality in Siberia following the anti-plague research laboratory incident.",
+          tier: "Investigative Press"
+        }
+      ]
+    },
+    {
+      date: "2026-10-07",
+      timeUtc: "08:30",
+      title: "Kremlin & Rospotrebnadzor Issue Blanket Denial of Second Death",
+      location: "Moscow, Russia",
+      classification: "Containment Measure",
+      details: "Kremlin spokesman Dmitry Peskov addresses the reports directly, calling media coverage claiming a second death 'untrue information' and directing journalists strictly to consumer safety watchdog Rospotrebnadzor. Russian federal authorities reiterate that laboratory testing on all 197 observed contacts remains negative.",
+      receipts: [
+        {
+          sourceName: "The Moscow Times",
+          sourceUrl: "https://www.themoscowtimes.com/2026/10/07/kremlin-denies-second-plague-death-in-irkutsk-a86591",
+          publishedAt: "2026-10-07",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "Kremlin spokesman Dmitry Peskov branded reports of a second death as false information, insisting federal agencies have the situation under complete control.",
+          tier: "National Wire"
+        }
+      ]
+    },
+    {
+      date: "2026-10-07",
+      timeUtc: "12:00",
+      title: "World Health Organization (WHO) Launches Formal Information Request to Moscow",
+      location: "Geneva, Switzerland",
+      classification: "International Alert",
+      details: "The World Health Organization confirms it has formally contacted Russian health authorities under International Health Regulations (IHR) requesting clinical dossiers and verified data regarding both the primary fatality and the reported second death. WHO officials note they currently lack the 'full picture' amidst continuing regional hospital lockdowns.",
+      receipts: [
+        {
+          sourceName: "World Health Organization (DON)",
+          sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON589",
+          publishedAt: "2026-10-07",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "WHO has requested further information from the Russian government regarding reports of an additional sick employee and suspected second fatality.",
+          tier: "Primary Authority"
+        }
+      ]
+    },
+    {
+      date: "2026-10-07",
+      timeUtc: "15:30",
+      title: "U.S. Embassy Issues Health Alert; Diplomatic Requests for Biological Transparency",
+      location: "Moscow & Washington, D.C.",
+      classification: "International Alert",
+      details: "The U.S. Embassy in Moscow issues an official health advisory for American citizens traveling or residing in the Irkutsk region. Simultaneously, the U.S. Department of State confirms bilateral inquiries have been lodged with Russian counterparts to obtain verified pathogen profiling and sequence verification.",
+      receipts: [
+        {
+          sourceName: "U.S. Embassy Moscow / Department of State",
+          sourceUrl: "https://ru.usembassy.gov/health-alert-u-s-embassy-moscow-russia-october-7-2026/",
+          publishedAt: "2026-10-07",
+          retrievedAt: "2026-10-07T16:50:00Z",
+          verbatimExcerpt: "U.S. citizens are advised to exercise heightened health vigilance and avoid restricted medical zones in Irkutsk Oblast.",
+          tier: "Primary Authority"
+        }
+      ]
     }
   ],
   verifiedSourcesDirectory: [
@@ -577,25 +729,25 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
     },
     {
       sourceName: "Daily Mail",
-      sourceUrl: "https://www.dailymail.co.uk/news/article-russia-plague-siberia-lab-death.html",
-      publishedAt: "2026-10-04",
-      retrievedAt: "2026-10-06T05:13:00Z",
-      verbatimExcerpt: "Russian laboratory technician Daria Shipilova, 28, died after accidentally breaking a test tube containing pneumonic plague at the Anti-Plague Research Institute in Irkutsk.",
+      sourceUrl: "https://www.dailymail.co.uk/news/article-13931649/second-death-plague-outbreak-russia-irkutsk.html",
+      publishedAt: "2026-10-06",
+      retrievedAt: "2026-10-07T16:50:00Z",
+      verbatimExcerpt: "Reports emerge of an alleged second fatality at an Irkutsk district hospital amid growing biosecurity concerns, prompting international demands for transparency.",
       tier: "Investigative Press"
     },
     {
       sourceName: "Daily Star",
-      sourceUrl: "https://www.dailystar.co.uk/news/world-news/russia-plague-outbreak-fears-quarantine-33829101",
-      publishedAt: "2026-10-05",
-      retrievedAt: "2026-10-06T05:13:00Z",
-      verbatimExcerpt: "Reports concerning a potential plague outbreak in the Irkutsk region of Russia center on the death of a 28-year-old laboratory worker named Darya Shipilova.",
+      sourceUrl: "https://www.dailystar.co.uk/news/world-news/russia-plague-second-death-irkutsk-33829401",
+      publishedAt: "2026-10-06",
+      retrievedAt: "2026-10-07T16:50:00Z",
+      verbatimExcerpt: "Second patient reportedly dies in Siberian hospital as Russian officials push back against claims of wider contagion.",
       tier: "Investigative Press"
     },
     {
       sourceName: "The New York Times (Authenticated Ingestion Feed)",
       sourceUrl: "https://www.nytimes.com/search?query=russia+plague+irkutsk",
-      publishedAt: "2026-10-06",
-      retrievedAt: "2026-10-06T05:13:00Z",
+      publishedAt: "2026-10-07",
+      retrievedAt: "2026-10-07T16:50:00Z",
       verbatimExcerpt: "NYTimes continuous syndication wire & newsroom ingest connector active via subscriber authentication session.",
       tier: "National Wire"
     },
@@ -617,18 +769,26 @@ export const PLAGUE_DATASET: PlagueOutbreakDataset = {
     },
     {
       sourceName: "The Moscow Times",
-      sourceUrl: "https://www.themoscowtimes.com/2026/10/04/siberian-researcher-dies-quarantine-plague-rumors-a86542",
-      publishedAt: "2026-10-04",
-      retrievedAt: "2026-10-06T05:13:00Z",
-      verbatimExcerpt: "Russian health watchdog Rospotrebnadzor stated that expanded testing did not identify any microorganisms associated with her laboratory work.",
+      sourceUrl: "https://www.themoscowtimes.com/2026/10/07/kremlin-denies-second-plague-death-in-irkutsk-a86591",
+      publishedAt: "2026-10-07",
+      retrievedAt: "2026-10-07T16:50:00Z",
+      verbatimExcerpt: "Kremlin spokesman Dmitry Peskov branded reports of a second death as false information, insisting federal agencies have the situation under complete control.",
       tier: "Primary Authority"
     },
     {
       sourceName: "World Health Organization (DON)",
-      sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news",
-      publishedAt: "2026-10-05",
-      retrievedAt: "2026-10-06T05:13:00Z",
-      verbatimExcerpt: "The World Health Organization confirmed it is in direct communication with Russian national focal points under the International Health Regulations (IHR 2005).",
+      sourceUrl: "https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON589",
+      publishedAt: "2026-10-07",
+      retrievedAt: "2026-10-07T16:50:00Z",
+      verbatimExcerpt: "WHO has requested further information from the Russian government regarding reports of an additional sick employee and suspected second fatality.",
+      tier: "Primary Authority"
+    },
+    {
+      sourceName: "U.S. Embassy Moscow / Department of State",
+      sourceUrl: "https://ru.usembassy.gov/health-alert-u-s-embassy-moscow-russia-october-7-2026/",
+      publishedAt: "2026-10-07",
+      retrievedAt: "2026-10-07T16:50:00Z",
+      verbatimExcerpt: "Health Alert: U.S. citizens are advised to monitor local conditions and avoid medical isolation cordons in Irkutsk Oblast following reports of contagious pulmonary illness under international review.",
       tier: "Primary Authority"
     }
   ]

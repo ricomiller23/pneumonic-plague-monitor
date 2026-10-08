@@ -103,7 +103,7 @@ export function DualModeMapContainer({ nodes, vectors }: DualModeMapContainerPro
 
             <div className="flex items-center gap-3 text-xs font-mono">
               <div className="px-2.5 py-1 bg-red-50 border border-red-100 rounded-lg text-red-800">
-                Fatalities: <strong className="font-bold">{selectedNode.fatalitiesCount}</strong>
+                Fatalities: <strong className="font-bold">{selectedNode.fatalitiesCount}</strong>{selectedNode.disputedFatalitiesCount ? <span className="ml-1 text-[10px] text-amber-700 font-semibold">(+{selectedNode.disputedFatalitiesCount} Disputed)</span> : null}
               </div>
               <div className="px-2.5 py-1 bg-amber-50 border border-amber-100 rounded-lg text-amber-800">
                 Isolated / Contacts: <strong className="font-bold">{selectedNode.suspectedOrQuarantinedCount}</strong>

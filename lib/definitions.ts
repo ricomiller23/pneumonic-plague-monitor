@@ -1,4 +1,4 @@
-export type CaseClassification = 'Confirmed' | 'Suspected / Medical Isolation' | 'Ruled Out' | 'Fatal';
+export type CaseClassification = 'Confirmed' | 'Suspected / Medical Isolation' | 'Ruled Out' | 'Fatal' | 'Disputed / Under Inquiry';
 
 export interface SourceReceipt {
   sourceName: string;
@@ -22,6 +22,7 @@ export interface EpicenterNode {
   confirmedCount: number;
   suspectedOrQuarantinedCount: number;
   fatalitiesCount: number;
+  disputedFatalitiesCount?: number;
   prophylaxisAdministered: string;
   description: string;
   receipts: SourceReceipt[];
@@ -60,6 +61,8 @@ export interface PlagueOutbreakDataset {
   };
   metrics: {
     primaryFatalities: number;
+    disputedFatalities: number;
+    totalFatalitiesReported: number;
     contactsUnderQuarantine: number;
     confirmedSecondaryCases: number;
     quarantinedFacilities: number;
